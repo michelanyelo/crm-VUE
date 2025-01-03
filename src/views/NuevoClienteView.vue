@@ -34,9 +34,9 @@ defineProps({
                         :validation-messages="{ required: 'El correo electrónico del cliente es obligatorio', email: 'El correo electrónico no es válido' }" />
 
                     <!-- Telefono -->
-                    <FormKit type="text" label="Teléfono" placeholder="Teléfono del cliente: +569 12345678"
-                        validation="required"
-                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio' }" />
+                    <FormKit type="text" label="Teléfono" placeholder="Teléfono del cliente: +56912345678"
+                        validation="required|*matches:/^\+569[0-9]{8}$/"
+                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches: 'El teléfono del cliente no es válido' }" />
                 </FormKit>
             </div>
         </div>
