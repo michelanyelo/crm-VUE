@@ -1,5 +1,6 @@
 <script setup>
 import RouterLink from '@/components/UI/RouterLink.vue';
+import HeadingComp from '@/components/UI/HeadingComp.vue';
 </script>
 
 <template>
@@ -7,6 +8,6 @@ import RouterLink from '@/components/UI/RouterLink.vue';
         <div class="flex justify-end">
             <RouterLink :to="{ name: 'agregar-cliente' }">Agregar Cliente</RouterLink>
         </div>
-        <h1 class="text-4xl font-extrabold text-slate-500">Clientes</h1>
+        <HeadingComp>Listado de Clientes</HeadingComp>
     </div>
 </template>
