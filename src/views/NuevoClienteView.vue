@@ -1,7 +1,9 @@
 <script setup>
+import axios from 'axios';
 import { FormKit } from '@formkit/vue';
 import RouterLink from '@/components/UI/RouterLink.vue';
 import HeadingComp from '@/components/UI/HeadingComp.vue';
+import { useRouter } from 'vue-router';
 
 defineProps({
     titulo: {
@@ -9,8 +11,18 @@ defineProps({
     }
 })
 
+const router = useRouter();
+
 const onSubmit = (data) => {
-    console.table(data);
+    axios.post('http://localhost:4000/clientes', data)
+        .then(() => {
+            alert('Cliente agregado correctamente');
+            router.push({ name: 'inicio' });
+        })
+        .catch((error) => {
+            console.error(error);
+            alert('Ocurrió un error al agregar el cliente');
+        })
 }
 </script>
 

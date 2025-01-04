@@ -1,12 +1,13 @@
 {
     "clientes": [
         {
-            "id": 1,
-            "nombre": "Miguel"
-        },
-        {
-            "id": 2,
-            "nombre": "Juan"
+            "id": "94e4",
+            "nombre": "Miguel Angel",
+            "apellido": "Monzon Martinez",
+            "email": "hangar1929@gmail.com",
+            "telefono": "+56940982372",
+            "empresa": "185109976",
+            "puesto": "ceo"
         }
     ]
 }
