@@ -24,6 +24,19 @@ defineProps({
 })
 
 const existenClientes = computed(() => clientes.value.length > 0);
+
+const actualizarEstado = ({ id, estado }) => {
+  ClienteService.cambiarEstado(id, { estado: !estado })
+    .then(() => {
+      const i = clientes.value.findIndex((cliente) => cliente.id === id);
+      clientes.value[i].estado = !estado;
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+}
+
+
 </script>
 
 <template>
@@ -52,7 +65,8 @@ const existenClientes = computed(() => clientes.value.length > 0);
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 bg-white">
-                <ClienteComp v-for="cliente in clientes" :key="cliente.id" :cliente="cliente" />
+                <ClienteComp v-for="cliente in clientes" :key="cliente.id" :cliente="cliente"
+                  @actualizar-estado="actualizarEstado" />
               </tbody>
             </table>
           </div>

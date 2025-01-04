@@ -8,7 +8,7 @@
       "empresa": "SoyMiPropia Empresa",
       "puesto": "CEO",
       "id": "f991",
-      "estado": 1
+      "estado": true
     },
     {
       "id": "f992",
@@ -18,7 +18,7 @@
       "telefono": "+56940982372",
       "empresa": "SoyMiPropia Empresa",
       "puesto": "CEO",
-      "estado": 0
+      "estado": true
     }
   ]
 }
