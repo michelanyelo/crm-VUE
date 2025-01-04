@@ -7,4 +7,7 @@ export default {
   agregarCliente(data) {
     return instance.post("/clientes", data);
   },
+  obtenerCliente(id) {
+    return instance.get(`/clientes/${id}`);
+  }
 }
