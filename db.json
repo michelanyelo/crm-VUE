@@ -1,13 +1,22 @@
 {
-    "clientes": [
-        {
-            "id": "94e4",
-            "nombre": "Miguel Angel",
-            "apellido": "Monzon Martinez",
-            "email": "hangar1929@gmail.com",
-            "telefono": "+56940982372",
-            "empresa": "185109976",
-            "puesto": "ceo"
-        }
-    ]
+  "clientes": [
+    {
+      "id": "94e4",
+      "nombre": "Miguel Angel",
+      "apellido": "Monzon Martinez",
+      "email": "hangar1929@gmail.com",
+      "telefono": "+56940982372",
+      "empresa": "185109976",
+      "puesto": "ceo"
+    },
+    {
+      "id": "9753",
+      "nombre": "Camila",
+      "apellido": "Maulen",
+      "email": "camila@correo.cl",
+      "telefono": "+56940982372",
+      "empresa": "yo misma",
+      "puesto": "ceo"
+    }
+  ]
 }
