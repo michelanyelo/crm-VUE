@@ -8,25 +8,13 @@ import { FormKit } from '@formkit/vue';
 
 const router = useRouter();
 const route = useRoute();
-const formData = reactive({
-  nombre: '',
-  apellido: '',
-  email: '',
-  telefono: '',
-  empresa: '',
-  puesto: '',
-});
+const { id } = route.params;
+const formData = reactive({});
 
 onMounted(() => {
-  const { id } = route.params;
   ClienteService.obtenerCliente(id)
     .then((response) => {
-      formData.nombre = response.data.nombre;
-      formData.apellido = response.data.apellido;
-      formData.email = response.data.email;
-      formData.telefono = response.data.telefono;
-      formData.empresa = response.data.empresa;
-      formData.puesto = response.data.puesto;
+      Object.assign(formData, response.data);
     })
     .catch((error) => {
       console.error(error);
@@ -38,6 +26,16 @@ defineProps({
     type: String,
   }
 })
+
+const onSubmit = () => {
+  ClienteService.actualizarCliente(id, formData)
+    .then(() => {
+      router.push({ name: 'listado-clientes' });
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+}
 
 </script>
 

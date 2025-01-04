@@ -9,5 +9,8 @@ export default {
   },
   obtenerCliente(id) {
     return instance.get(`/clientes/${id}`);
+  },
+  actualizarCliente(id, data) {
+    return instance.patch(`/clientes/${id}`, data);
   }
 }
