@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue';
-import axios from 'axios';
+import instance from '@/lib/axios';
 import RouterLink from '@/components/UI/RouterLink.vue';
 import HeadingComp from '@/components/UI/HeadingComp.vue';
 import ClienteComp from '@/components/ClienteComp.vue';
@@ -8,8 +8,10 @@ import ClienteComp from '@/components/ClienteComp.vue';
 const clientes = ref([]);
 
 onMounted(() => {
-  axios('http://localhost:4000/clientes')
-    .then(({ data }) => clientes.value = data)
+  instance('/clientes')
+    .then((response) => {
+      clientes.value = response.data;
+    })
     .catch((error) => {
       console.error(error);
     })

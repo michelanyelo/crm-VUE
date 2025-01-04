@@ -1,9 +1,9 @@
 <script setup>
-import axios from 'axios';
 import { FormKit } from '@formkit/vue';
 import RouterLink from '@/components/UI/RouterLink.vue';
 import HeadingComp from '@/components/UI/HeadingComp.vue';
 import { useRouter } from 'vue-router';
+import instance from '@/lib/axios';
 
 defineProps({
   titulo: {
@@ -14,7 +14,7 @@ defineProps({
 const router = useRouter();
 
 const onSubmit = (data) => {
-  axios.post('http://localhost:4000/clientes', data)
+  instance.post('/clientes', data)
     .then(() => {
       alert('Cliente agregado correctamente');
       router.push({ name: 'listado-clientes' });
