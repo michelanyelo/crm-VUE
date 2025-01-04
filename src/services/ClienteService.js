@@ -15,5 +15,8 @@ export default {
   },
   cambiarEstado(id, data) {
     return instance.patch(`/clientes/${id}`, data);
+  },
+  eliminarCliente(id) {
+    return instance.delete(`/clientes/${id}`);
   }
 }

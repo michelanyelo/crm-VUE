@@ -9,16 +9,6 @@
       "puesto": "CEO",
       "id": "f991",
       "estado": true
-    },
-    {
-      "id": "f992",
-      "nombre": "Miguel Angel",
-      "apellido": "Monzon Martinez",
-      "email": "hangar1929@gmail.com",
-      "telefono": "+56940982372",
-      "empresa": "SoyMiPropia Empresa",
-      "puesto": "CEO",
-      "estado": true
     }
   ]
 }
