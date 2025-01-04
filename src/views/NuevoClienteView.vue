@@ -1,9 +1,9 @@
 <script setup>
-import { FormKit } from '@formkit/vue';
+import ClienteService from '@/services/ClienteService';
 import RouterLink from '@/components/UI/RouterLink.vue';
 import HeadingComp from '@/components/UI/HeadingComp.vue';
 import { useRouter } from 'vue-router';
-import instance from '@/lib/axios';
+import { FormKit } from '@formkit/vue';
 
 defineProps({
   titulo: {
@@ -14,7 +14,8 @@ defineProps({
 const router = useRouter();
 
 const onSubmit = (data) => {
-  instance.post('/clientes', data)
+  data.estado = 1;
+  ClienteService.agregarCliente(data)
     .then(() => {
       alert('Cliente agregado correctamente');
       router.push({ name: 'listado-clientes' });
