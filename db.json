@@ -1,13 +1,13 @@
 {
   "clientes": [
     {
+      "id": "d2cc",
       "nombre": "Miguel Angel",
       "apellido": "Monzon Martinez",
-      "email": "hangar1929@gmail.com",
-      "telefono": "+56940982372",
-      "empresa": "SoyMiPropia Empresa",
+      "email": "miguelmonzon@correo.cl",
+      "telefono": "+56912345678",
+      "empresa": "Devs Ltda",
       "puesto": "CEO",
-      "id": "f991",
       "estado": true
     }
   ]
